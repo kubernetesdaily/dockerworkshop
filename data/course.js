@@ -5,10 +5,10 @@ const DEFAULT_CONFIG = {
     name: "Sangam",
     company: "CloudNativefolks",
   },
-  title: "Container Security",
+  title: "Docker Workshop",
   subtitle: "CloudNativeFolks Community Labs",
   frontendMastersLink: "",
-  description: "Container Security",
+  description: "Docker Workshop",
   keywords: ["docker", "security", "container", "cyber"],
   social: {
     linkedin: "sangambiradaf",
