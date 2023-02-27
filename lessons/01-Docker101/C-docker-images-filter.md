@@ -1,8 +1,6 @@
 ---
-
-title: "Docker Image fi;ltering"
-description: "The introduction to this course."
-
+title: "Docker Image Filtering"
+description: "Filter Docker Images"
 ---
 
 running `docker run alpine ` command would download the Alpine Linux image from Docker Hub and start a new container based on that image. You can then use the container to run commands or applications. When you exit the container, it will stop running.
