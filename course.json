@@ -8,7 +8,7 @@
     },
     "company": "deepfence.io"
   },
-  "title": "Container Security",
+  "title": "Docker Workshop",
   "subtitle": "Ultimate Workhop track",
   "frontendMastersLink": "https://discord.com/invite/9ERSnT7",
   "social": {
@@ -18,5 +18,5 @@
   },
   "description": "learn Container Security ",
   "keywords": ["web dev", "web developer", "css", "javascript", "html", "visual studio code", "learn to code"],
-  "productionBaseUrl": "/containersecurity"
+  "productionBaseUrl": "/dockerworkshop"
 }
