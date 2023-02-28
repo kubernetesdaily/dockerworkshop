@@ -1,5 +1,5 @@
 ---
-title: "Images and Container As Tar file  "
+title: "Images and Container As Tar file"
 description: " share as tar "
 ---
 
@@ -52,4 +52,17 @@ docker export 1b  > os.tar
 docker export loving_ride  > os1.tar
 dockerworkshop git:(main) ✗ ls
 os.tar   os1.tar
+```
+
+
+docker load is a command used to load images or container archives that were previously saved using the docker save command.
+
+When you use the docker save command, it creates a tar archive of one or more Docker images and/or containers. You can then use the docker load command to load this tar archive back into Docker.
+
+The syntax for using the docker load command is as follows:
+
+```
+➜  dockerworkshop git:(main) ✗ docker save -o os.tar ubuntu  
+➜  dockerworkshop git:(main) ✗ docker load < os.tar            
+Loaded image: ubuntu:14.04
 ```
