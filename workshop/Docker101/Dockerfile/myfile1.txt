@@ -1,0 +1,3 @@
+# myfile1.txt
+Hello This is my first file !
+This is file will be copied in /usr/share directory from Docker host to Docker Container.

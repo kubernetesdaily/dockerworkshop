@@ -1,0 +1,4 @@
+
+# myfile2.txt
+Hello This is my second file !
+This is file will be copied in /tmp directory from Docker host to Docker Container.
