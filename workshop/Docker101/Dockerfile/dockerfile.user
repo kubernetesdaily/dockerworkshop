@@ -1,0 +1,5 @@
+FROM alpine
+RUN adduser -D myuser
+USER myuser
+ENTRYPOINT [“sleep”]
+CMD [“1000”]

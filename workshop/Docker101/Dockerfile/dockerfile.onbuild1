@@ -1,0 +1,2 @@
+From sangam14/onbuild-dockerfile     
+COPY index.html . 

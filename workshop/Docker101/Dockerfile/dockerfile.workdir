@@ -1,0 +1,5 @@
+FROM ubuntu
+WORKDIR /var/www/html
+RUN apt-get update && apt-get install -y nginx
+COPY index.html .
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
