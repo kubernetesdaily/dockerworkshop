@@ -1,0 +1,16 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql:latest
+    restart: always
+    container_name: myphpapp-db
+    environment:
+       MYSQL_ROOT_PASSWORD: somepass
+       MYSQL_DATABASE: somedatabase
+    volumes:
+      - my-vol:/var/lib/mysql
+
+volumes:
+  my-vol:
+    name: my-vol
