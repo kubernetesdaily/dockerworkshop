@@ -17,6 +17,6 @@
     "twitter": "BiradarSangam"
   },
   "description": "Learn Docker Easy Way  ",
-  "keywords": ["docker","docker compose " "docker networking"],
+  "keywords": ["docker","docker compose ", "docker networking"],
   "productionBaseUrl": "/dockerworkshop"
 }
