@@ -6,8 +6,7 @@ description: " Execute a command in a running container. "
 ### Docker Compose Exec into result service 
 
 
-```
-
+```sh
 
 docker compose exec result sh 
 # ls

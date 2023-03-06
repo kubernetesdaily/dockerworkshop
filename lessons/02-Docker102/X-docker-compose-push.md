@@ -6,7 +6,7 @@ description: " Push service images "
 #### Push service images
 
 
-```
+```sh
 
 services:
   service1:

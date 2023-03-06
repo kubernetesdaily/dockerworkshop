@@ -7,13 +7,13 @@ COPY is a dockerfile command that copies files from a local source location to a
 
 create myfile1.txt and myfile2.txt with following content :
 
-```
+```sh
 # myfile1.txt
 Hello This is my first file !
 This is file will be copied in /usr/share directory from Docker host to Docker Container.
 ```
 
-```
+```sh
 # myfile2.txt
 Hello This is my second file !
 This is file will be copied in /tmp directory from Docker host to Docker Container.
@@ -21,7 +21,7 @@ This is file will be copied in /tmp directory from Docker host to Docker Contain
 ```
 The general syntax of the COPY command is:
 
-```
+```sh
 COPY <src> <dest>
 
 ```
@@ -41,7 +41,7 @@ COPY myfile2.txt /tmp
 ```
 ### Build Dockerfile using following Command 
 
-```
+```sh
   Dockerfile git:(main) ✗ docker build -t sangam14/copy-dockerfile  -f dockerfile.copy .
 [+] Building 2.2s (9/9) FINISHED                                                                                                                                                                  
  => [internal] load build definition from dockerfile.copy                                                                                                                                    0.0s
@@ -62,9 +62,9 @@ COPY myfile2.txt /tmp
 
  ```
 
- ### check inside container and search for text file 
+ #### check inside container and search for text file 
 
-```
+```sh
 ➜  Dockerfile git:(main) ✗ docker run -it sangam14/copy-dockerfile bash                  
 root@27a3fbe098c3:/# ls
 bin  boot  dev  etc  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var

@@ -2,9 +2,10 @@
 title: " Dockerfile Lab - ARG instruction "
 description: " Dockerfile Lab 7 "
 ---
-### Build Dockerfile 
 
-```
+#### Build Dockerfile 
+
+```sh
  Dockerfile git:(main) ✗ docker build -t sangam14/arg-dockerfile  -f dockerfile.arg .
 [+] Building 3.5s (11/11) FINISHED                                                                                                                         
  => [internal] load build definition from dockerfile.arg                                                                                              0.0s
@@ -26,15 +27,16 @@ description: " Dockerfile Lab 7 "
 
  ```
 
-### Inspect Env variable 
-```
+#### Inspect Env variable 
+
+```sh
 docker image inspect --format '{{json .Config}}' sangam14/arg-demo:1.0 | jq '.Env'
 
 ```
 
 output 
 
-```
+```sh
 docker image inspect --format '{{json .Config}}' sangam14/arg-dockerfile | jq '.Env'
 [
   "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
@@ -44,7 +46,7 @@ docker image inspect --format '{{json .Config}}' sangam14/arg-dockerfile | jq '.
 ```
 docker container run sangam14/arg-dockerfile env  
 
-```
+```sh
 docker container run sangam14/arg-dockerfile env                                    
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 HOSTNAME=7b09d8fffd50
@@ -54,7 +56,8 @@ HOME=/root
 
 ```
 #### Pass env values while building dockerfile 
-```
+
+```sh
 docker  build --rm --build-arg key1="buildTimeValue" --build-arg key2="good till env instruction" --tag sangam14/arg-dockerfile1 -f dockerfile.arg . 
 Sending build context to Docker daemon  50.18kB
 Step 1/11 : FROM alpine
@@ -111,9 +114,10 @@ Removing intermediate container b13a9ae5798f
 Successfully built 9f878f6fe503
 Successfully tagged sangam14/arg-dockerfile1:latest
 ```
-### Inspect Env of new docker image 
 
-```
+#### Inspect Env of new docker image 
+
+```sh
 docker image inspect --format '{{json .Config}}' sangam14/arg-dockerfile1:latest | jq '.Env'
 [
   "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
@@ -121,7 +125,8 @@ docker image inspect --format '{{json .Config}}' sangam14/arg-dockerfile1:latest
   "key2=ENV value takes over"
 ]
 ```
-```
+
+```sh
 docker container run sangam14/arg-dockerfile1 env
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 HOSTNAME=dff7e104aadb
@@ -133,7 +138,8 @@ HOME=/root
 
 
 cat dockerfile.arg1
-```
+
+```Dockerfile
 
 FROM alpine
 
@@ -154,7 +160,8 @@ CMD ["./hello"]
 ```
 
 #### build docker image and pass build args 
-```
+
+```sh
 docker build --build-arg username=35 --build-arg appdir="/opt/hello" -t sangam14/arg1-dockerfile  -f dockerfile.arg1 .
 ```
 

@@ -7,7 +7,7 @@ description: " Docker Compose Newtorking "
 ## create wordpress docker compose  
 
 
-```
+```yml
 wordpress:
     image: wordpress
     links:
@@ -31,7 +31,7 @@ mariadb:
 
 ### run docker compose 
 
-```
+```sh
 docker compose up 
 ```
 

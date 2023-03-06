@@ -7,7 +7,7 @@ description: " Removes stopped service containers"
 #### Removes stopped service containers
 
 
-```
+```sh
 ➜  example-voting-app git:(main) docker compose stop 
 [+] Running 5/5
  ⠿ Container example-voting-app-vote-1    Stopped                                                                                                                                    0.3s

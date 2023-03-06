@@ -6,8 +6,7 @@ description: " Dockerfile Lab 11 "
 
 cat dockerfile 
 
-```
-
+```dockerfile
 FROM alpine
 ENV appDescription This app is a sample of using ENV instructions
 ENV appName=env-demo
@@ -21,7 +20,7 @@ CMD ["sh"]
 
 #### build dockerfile 
 
-```
+```sh
 
 ➜  Dockerfile git:(main) ✗ docker build -t sangam14/env-dockerfile  -f dockerfile.env .
 [+] Building 0.1s (5/5) FINISHED                                                                                                                  
@@ -40,7 +39,7 @@ CMD ["sh"]
 
 ### inspect Env Config 
 
-```
+```sh
 docker image inspect --format '{{json .Config}}' sangam14/env-dockerfile  | jq '.Env'
 [
   "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
@@ -54,7 +53,8 @@ docker image inspect --format '{{json .Config}}' sangam14/env-dockerfile  | jq '
 
 ```
 #### change envirmonment variable 
-```
+
+```sh
 
 docker  run --rm --env changeMe="New Value" --env adhoc="run time"   sangam14/env-dockerfile   env 
 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin

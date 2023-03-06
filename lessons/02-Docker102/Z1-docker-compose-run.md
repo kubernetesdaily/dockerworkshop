@@ -4,7 +4,7 @@ description: " run service containers"
 ---
 
 
-```
+```sh
 
 ➜  example-voting-app git:(main) docker compose run db                  
 

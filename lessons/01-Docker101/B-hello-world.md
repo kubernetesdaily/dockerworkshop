@@ -4,9 +4,9 @@ description: "run your first hello world example"
 ---
 
 
-### run your first hello world example
+#### run your first hello world example
 
-```
+```sh
 docker run hello-world
 ```
 is a command that runs a simple Docker container to verify that Docker is correctly installed on your system and working as expected.
@@ -17,7 +17,7 @@ Once the "hello-world" image is available, Docker will create a container from t
 
 Here's an example of what you might see when you run docker run hello-world:
 
-```
+```sh
 docker run hello-world
 Unable to find image 'hello-world:latest' locally
 latest: Pulling from library/hello-world
@@ -49,7 +49,8 @@ For more examples and ideas, visit:
 
 ```
 #### check it out list of docker images 
-```
+
+```sh
 dockerworkshop git:(main) ✗ docker images
 REPOSITORY                                TAG               IMAGE ID       CREATED         SIZE
 hello-world                               latest            46331d942d63   11 months ago   9.14kB
@@ -60,7 +61,7 @@ docker inspect is a command used to retrieve detailed information about one or m
 
 Here's the basic syntax of the docker inspect command:
 
-```
+```sh
 docker inspect [OPTIONS] OBJECT [OBJECT...]
 
 ```
@@ -69,7 +70,7 @@ docker inspect [OPTIONS] OBJECT [OBJECT...]
 
 For example, to inspect a running Docker container named hello-world , you could use the following command:
 
-```
+```sh
 docker inspect hello-world                         
 [
     {

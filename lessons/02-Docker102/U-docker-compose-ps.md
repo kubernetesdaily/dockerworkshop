@@ -5,7 +5,7 @@ description: " List containers "
 
 #### List containers
 
-```
+```sh
  docker compose ps 
 NAME                          IMAGE                       COMMAND                  SERVICE             CREATED             STATUS                       PORTS
 example-voting-app-db-1       postgres:15-alpine          "docker-entrypoint.s…"   db                  4 hours ago         Up About an hour (healthy)   5432/tcp

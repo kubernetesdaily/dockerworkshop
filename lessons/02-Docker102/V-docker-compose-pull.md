@@ -6,7 +6,7 @@ description: " Pull service images "
 #### Pull service images
 
 
-```
+```sh
  example-voting-app git:(main) docker compose pull 
 [+] Running 5/5
  ⠿ vote Skipped - No image to be pulled                                                                                                                                              0.0s

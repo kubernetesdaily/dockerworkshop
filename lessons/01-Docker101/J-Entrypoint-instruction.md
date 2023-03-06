@@ -15,7 +15,7 @@ ENTRYPOINT ["echo", "Hello!"]
 
 #### Build dockerfile 
 
-```
+```sh
 ➜  Dockerfile git:(main) ✗ docker build -t sangam14/entrypoint-dockerfile  -f dockerfile.entrypoint .
 [+] Building 3.2s (6/6) FINISHED                                                                                            
  => [internal] load build definition from dockerfile.entrypoint                                                        0.0s
@@ -37,7 +37,7 @@ ENTRYPOINT ["echo", "Hello!"]
 
 #### run docker container 
 
-```
+```sh
  Dockerfile git:(main) ✗ docker run sangam14/entrypoint-dockerfile 
 Hello!
 ➜  Dockerfile git:(main) ✗ docker run sangam14/entrypoint-dockerfile echo "sangam"
@@ -50,7 +50,7 @@ Hello! echo sangam
 
 On the other hand, in ENTRYPOINT, you can change the instruction by using the option of `—entrypoint` as follows.
 
-```
+```sh
 docker run --rm --entrypoint sh sangam14/entrypoint-dockerfile  -c 'echo "test"'
 test
 

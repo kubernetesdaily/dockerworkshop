@@ -7,7 +7,7 @@ we already used database with web app but docker containers are ephermal. this m
 
 create `docker-compose.yml` using following content 
 
-```
+```yml
 version: '3'
 services:
   db:
@@ -41,7 +41,7 @@ depends_on waits for the container to start on the other containers
 
 #### check docker compose process 
 
-```
+```sh
 5-DC-Host-Vol-mount git:(main) ✗ docker compose ps
 NAME                IMAGE               COMMAND                  SERVICE             CREATED              STATUS              PORTS
 myphpapp-db         mysql:latest        "docker-entrypoint.s…"   db                  About a minute ago   Up About a minute   3306/tcp, 33060/tcp
@@ -51,7 +51,7 @@ myphpapp-db         mysql:latest        "docker-entrypoint.s…"   db           
 
 #### open mariadb shell 
 
-```
+```sh
  docker compose run --rm dbclient
 [+] Running 1/0
  ⠿ Container myphpapp-db  Running                                                                                                          0.0s
@@ -71,7 +71,8 @@ mysql>
 
 ```
 #### enter following SQL queries 
-```
+
+```sh
 mysql> USE somedatabase;
 Database changed
 mysql> SHOW TABLES;
@@ -79,7 +80,7 @@ Empty set (0.01 sec)
 
 ```
 #### lets create table 
-```
+```sh
 mysql> CREATE TABLE mytable (id INT) ;
 Query OK, 0 rows affected (0.04 sec)
 
@@ -95,7 +96,7 @@ mysql> exit
 
 #### sto and remove  container 
 
-```
+```sh
 docker-compose stop
 [+] Running 2/2
  ⠿ Container 5-dc-host-vol-mount-dbclient-1  Stopped                                                                                       0.0s
@@ -109,13 +110,13 @@ docker-compose stop
 
 ```
 ### lets make data persistent even we remove container ? with volumesa nd a host mounded data directory 
-```
+```sh
 mkdir data 
 
 ```
 lets update docker-compose.yml
 
-```
+```yml
 version: '3'
 
 services:
@@ -138,7 +139,7 @@ services:
 
 #### restart docker compose 
 
-```
+```sh
 
 docker-compose up -d   
 [+] Running 2/2
@@ -148,7 +149,7 @@ docker-compose up -d
 ```
 ### recreate table 
 
-
+```sh
 ➜  5-DC-Host-Vol-mount git:(main) ✗ docker compose run --rm dbclient
 [+] Running 1/0
  ⠿ Container myphpapp-db  Running                                                                                                          0.0s
@@ -186,7 +187,7 @@ mysql> exit
 
 ####  stop and remove the container 
 
-```
+```sh
 5-DC-Host-Vol-mount git:(main) ✗ docker compose stop 
 [+] Running 2/2
  ⠿ Container 5-dc-host-vol-mount-dbclient-1  Stopped                                                                                       0.0s
@@ -201,7 +202,7 @@ mysql> exit
 ```
 #### lets start db container again 
 
-```
+```sh
 docker compose run --rm dbclient
 [+] Running 1/0
  ⠿ Container myphpapp-db  Running                                                                                                          0.0s
@@ -224,7 +225,7 @@ mysql>
 
 #### lets data is persistent or not 
 
-```
+```sh
 USE somedatabase;
 Reading table information for completion of table and column names
 You can turn off this feature to get a quicker startup with -A

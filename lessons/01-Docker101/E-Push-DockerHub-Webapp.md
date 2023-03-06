@@ -6,7 +6,7 @@ description: "nginx"
 
 #### Pull nginx image from dockerhub using 
 
-```
+```sh
 dockerworkshop git:(main) ✗ docker pull nginx
 Using default tag: latest
 latest: Pulling from library/nginx
@@ -16,15 +16,15 @@ docker.io/library/nginx:latest
 ```
 #### Run Docker with ngnix 
 
-```
+```sh
  dockerworkshop git:(main) ✗ docker run --name docker-nginx -p 80:80 -d nginx
 63258aebdc2d8ea40a0099efb3e51f8b15db2fe2dc048da3901843b4782d19fb
 ```
 –name docker-nginx : Name given to the container that is run is docker-nginx-p 80:80 : the port we are exposing and mapping from local machine port number to that of container, in the format local_machine_port:container_port-d : Detached mode – Runs the container in background
 
-### check all running docker containers 
+#### check all running docker containers 
 
-```
+```sh
 ➜  dockerworkshop git:(main) ✗ docker ps
 CONTAINER ID   IMAGE                       COMMAND                  CREATED          STATUS          PORTS                NAMES
 63258aebdc2d   nginx                       "/docker-entrypoint.…"   55 seconds ago   Up 55 seconds   0.0.0.0:80->80/tcp   docker-nginx
@@ -66,7 +66,7 @@ COPY . /usr/share/nginx/html
 
 #### Build Dockerfile 
 
-```
+```sh
 Dockerfile git:(main) ✗ docker build -t nginx-application -f dockerfile.ngnix .
 [+] Building 0.1s (7/7) FINISHED                                                                                                                                                                  
  => [internal] load build definition from dockerfile.ngnix                                                                                                                                   0.0s
@@ -87,28 +87,30 @@ Dockerfile git:(main) ✗ docker build -t nginx-application -f dockerfile.ngnix 
 
 
 #### run updated ngnix webapp 
-```
+
+```sh
 docker run --name docker-nginx-app  -p 80:80 -d nginx-application
 
 ```
 
 #### List docker images 
 
-```
+```sh
 Dockerfile git:(main) ✗ docker images
 REPOSITORY                                                TAG                                                                          IMAGE ID       CREATED         SIZE
 nginx-application                                         latest                                                                       e8742ef897ea   2 minutes ago   135MB
 ```
 
 #### Tag Docker Images 
-```
+
+```sh
 docker tag nginx-application  sangam14/nginx-application 
 
 ```
 
 #### Login into Your DockerHub Account 
 
-```
+```sh
 docker login 
 docker push sangam14/nginx-application  
 Using default tag: latest

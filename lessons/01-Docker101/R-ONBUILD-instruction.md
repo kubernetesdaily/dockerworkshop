@@ -8,7 +8,8 @@ description: " Dockerfile Lab 12 "
 The ONBUILD instruction is a trigger. It sets instructions that will be executed when another image is built from the image being build.
 
 This is useful for building images which will be used as a base to build other images.
-```
+
+```sh
 ONBUILD COPY . /src
 
 ```
@@ -17,7 +18,7 @@ You can't chain ONBUILD instructions with ONBUILD.
 ONBUILD can't be used to trigger FROM instructions.
 
 
-```
+```Dockerfile
 FROM nginx:1.16-alpine
 WORKDIR /usr/share/nginx/html
 ONBUILD COPY index.html . 
@@ -25,7 +26,7 @@ ONBUILD COPY index.html .
 
 #### build dockerfile 
 
-```
+```sh
 docker build -t sangam14/onbuild-dockerfile  -f dockerfile.onbuild .
 [+] Building 5.8s (7/7) FINISHED                                                                                                                  
  => [internal] load build definition from dockerfile.onbuild                                                                                 0.0s
@@ -53,20 +54,21 @@ docker build -t sangam14/onbuild-dockerfile  -f dockerfile.onbuild .
 
 ### create another dockerfile 
 
-```
+```Dockerfile
 From sangam14/onbuild-dockerfile     
 COPY index.html . 
 
 ```
 #### here you will see default ngnix index page 
-```
+
+```sh
  docker run -p 80:80 sangam14/onbuild-dockerfile   
 
  ```
 
 #### build docker file 
 
-```
+```sh
 
 docker build -t sangam14/onbuild1-dockerfile  -f dockerfile.onbuild1 .
 [+] Building 0.1s (8/8) FINISHED                                                                                                              
@@ -88,8 +90,6 @@ docker build -t sangam14/onbuild1-dockerfile  -f dockerfile.onbuild1 .
 
 above container copied index.html form local 
 
-```
-
+```sh
 docker run -p 80:80 sangam14/onbuild1-dockerfile  
-
 ```

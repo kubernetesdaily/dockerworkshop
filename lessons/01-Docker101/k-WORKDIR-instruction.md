@@ -18,12 +18,13 @@ ENTRYPOINT ["nginx", "-g", "daemon off;"]
 ```
 #### build dockerfile 
 
-```
+```sh
 docker build -t sangam14/workdir-dockerfile  -f dockerfile.workdir .
 
 ```
 #### run docker container 
-```
+
+```sh
 docker run -p 80:80 sangam14/workdir-dockerfile 
 
 ```

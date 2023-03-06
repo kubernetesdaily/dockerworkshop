@@ -8,7 +8,7 @@ description: " View output from containers "
 #### View output from containers
 
 
-```
+```sh
 
 ➜  example-voting-app git:(main) docker-compose logs          
 example-voting-app-worker-1  | Connected to db

@@ -8,7 +8,7 @@ The RUN command is the central executing directive for Dockerfiles. It takes a c
 
 #### create dockerfile with following content 
 
-```
+```dockerfile
 FROM ubuntu
 RUN id
 RUN useradd --create-home -m -s /bin/bash dev
@@ -34,12 +34,13 @@ CMD ["/bin/bash"]
 
 ```
 #### run docer container 
-```
+
+```sh
 ➜  Dockerfile git:(main) ✗ docker run -it  sangam14/run-dockerfile 
 ```
 #### added user as my-app with whale emoji 
 
-```
+```sh
 my-app 🐳  [dev@0270ab5e6f0c]:/ $ ls
 bin  boot  dev  etc  home  lib  media  mnt  myvol  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 my-app 🐳  [dev@0270ab5e6f0c]:/ $ cat myvol/greeting 

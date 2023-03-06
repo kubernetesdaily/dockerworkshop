@@ -6,7 +6,7 @@ description: " Docker Compose Newtorking "
 
 create docker-compose.yml with following content :
 
-```
+```yml
 version: "3.7"
 
 services:
@@ -38,7 +38,7 @@ networks:
 
 #### the following nginx.conf configuration file in the same directory:
 
-```
+```sh
 
 events {}
 http {
@@ -64,7 +64,7 @@ http {
 
 ### run docker compose 
 
-```
+```sh
 
 docker compose up 
 ```
@@ -72,12 +72,12 @@ docker compose up
 ### Go to http://localhost:8080 and observer the command line
 
 
-•	It will show you the nignx-container web_1 container (reverse_proxy) was requested
-•	And forwarded the request to “app1” container
-•	Reload a few times to make this more obvious
+•	It will show you the nignx-container web_1 container (reverse_proxy) was requested <br>
+•	And forwarded the request to “app1” container <br>
+•	Reload a few times to make this more obvious <br>
 
 #### Go to http://localhost:8080/app2 and observe the command line
-•	It will show you again that nginx-container web_1 container (reverse_proxy) was requested
-•	And now forwards to “app2” container
-•	Reload a few times to make this more obvious
+•	It will show you again that nginx-container web_1 container (reverse_proxy) was requested  <br>
+•	And now forwards to “app2” container <br>
+•	Reload a few times to make this more obvious <br>
 

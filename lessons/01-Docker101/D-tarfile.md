@@ -3,12 +3,12 @@ title: "Images and Container As Tar file"
 description: " share as tar "
 ---
 
-# Images and Container as Tarfile 
+#### Images and Container as Tarfile 
 
 Docker provides the ability to save images and containers as tar files, which can be useful for sharing with others or transferring between systems. Here's how to do it:
 
 
-````
+```sh
 docker pull nginx:latest
 latest: Pulling from library/nginx
 5731adb3a4ab: Pull complete 
@@ -23,11 +23,11 @@ docker.io/library/nginx:latest
 
 ```
 
-Saving an Image as a Tar File
+#### Saving an Image as a Tar File
 
 To save a Docker image as a tar file, use the docker save command with the image name and output file name:
 
-```
+```sh
 dockerworkshop git:(main) ✗ docker container run -it ubuntu:14.04 bash
 Unable to find image 'ubuntu:14.04' locally
 14.04: Pulling from library/ubuntu
@@ -41,13 +41,13 @@ exit
 
 ```
 
-```
+```sh
 ➜  dockerworkshop git:(main) ✗ docker ps
 CONTAINER ID   IMAGE                       COMMAND                  CREATED             STATUS             PORTS     NAMES
 1bf183201392   ubuntu:14.04                "bash"                   15 seconds ago      Up 14 seconds                loving_ride
 ```
 
-```
+```sh
 docker export 1b  > os.tar
 docker export loving_ride  > os1.tar
 dockerworkshop git:(main) ✗ ls
@@ -61,7 +61,7 @@ When you use the docker save command, it creates a tar archive of one or more Do
 
 The syntax for using the docker load command is as follows:
 
-```
+```sh
 ➜  dockerworkshop git:(main) ✗ docker save -o os.tar ubuntu  
 ➜  dockerworkshop git:(main) ✗ docker load < os.tar            
 Loaded image: ubuntu:14.04

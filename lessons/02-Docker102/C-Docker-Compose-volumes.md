@@ -5,7 +5,7 @@ description: " docker-compose.yml with volume mounting for instant updates"
 
 #### Lets build docker compose file 
 
-```
+```yml
 version: '3'
 services:
   phpapp:
@@ -23,7 +23,7 @@ also it mount port 80 of the container to port 8080 on the host
 
 #### create index.php with following content  
 
-```
+```php
 <?php
 
 echo "hello world \n\n";
@@ -31,7 +31,7 @@ echo "hello world \n\n";
 
 #### run with docker compose 
 
-```
+```sh
 2-DC-Vol-Mount git:(main) ✗ docker compose up
 [+] Running 15/15
  ⠿ phpapp Pulled                                                                                    13.2s

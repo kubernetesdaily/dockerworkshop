@@ -5,7 +5,7 @@ description: "Docker Compose"
 
 cat Dockerfile 
 
-```
+```dockerfile
 FROM php:7.2-apache
 COPY index.php /var/www/html
 
@@ -13,7 +13,7 @@ COPY index.php /var/www/html
 
 add index.php file  
 
-```
+```php
 <?php
 
 echo "hello world \n\n";
@@ -21,7 +21,7 @@ echo "hello world \n\n";
 
 creat docker-compose.yaml 
 
-```
+```yml
 version: '3'
 services:
   phpapp:
@@ -35,14 +35,14 @@ services:
 
 to run docker compose 
 
-```
+```sh
 
 docker compose up --build
 ```
 
 output 
 
-```
+```sh
  1-DC git:(main) ✗ docker compose up 
 [+] Building 21.2s (10/10) FINISHED                                                                                                                         
  => [internal] booting buildkit                                                                                                                        3.8s
@@ -111,7 +111,7 @@ Attaching to 1-dc-phpapp-1
 
 #### open browser 
 
-```
+```sh
 http://localhost:8080
 
 ```

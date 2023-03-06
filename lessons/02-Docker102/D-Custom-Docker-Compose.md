@@ -27,7 +27,7 @@ services:
 - here using dockerfile to generate an image 
 - mount folder inside your directory automatically 
 
-#### create index.php wu 
+#### create index.php with following content 
 ```php 
 <?php
 
@@ -105,7 +105,7 @@ services:
 
 #### rebuild docker compose 
 
-```
+```sh
 3-DC-Custom git:(main) ✗ docker compose up --build
 [+] Building 43.1s (9/9) FINISHED                                         
  => [internal] load .dockerignore                                    0.0s

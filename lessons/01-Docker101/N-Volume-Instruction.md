@@ -5,7 +5,7 @@ description: " Dockerfile Lab 8 "
 
 cat dockerfile.vol 
 
-```
+```Dockerfile
 FROM alpine
 RUN mkdir /myvol
 RUN echo "hello world" > /myvol/greeting
@@ -14,11 +14,11 @@ CMD ["sh"]
 
 ```
 
-### Build above dockerfile 
+#### Build above dockerfile 
 
-docker  build --rm --tag volume-demo:1.0 .
 
-```
+
+```sh
 docker build -t sangam14/vol-dockerfile  -f dockerfile.vol .            
 [+] Building 0.4s (7/7) FINISHED                                                                                                                           
  => [internal] load build definition from dockerfile.vol                                                                                              0.0s
@@ -35,14 +35,15 @@ docker build -t sangam14/vol-dockerfile  -f dockerfile.vol .
  => => naming to docker.io/sangam14/vol-dockerfile                                                                                                    0.0s
 ```
 
-## run dockerg
+#### run dockerg
 
+```sh
 docker  run --rm -it --mount source=myvolsrc,target=/myvol sangam14/vol-dockerfile 
-
+```
 
 output 
 
-```
+```sh
 docker  run --rm -it --mount source=myvolsrc,target=/myvol sangam14/vol-dockerfile   
 / # ls
 bin    dev    etc    home   lib    media  mnt    myvol  opt    proc   root   run    sbin   srv    sys    tmp    usr    var
@@ -51,14 +52,14 @@ hello world
 
 ```
 #### check it out all mounted volumes 
-```
+
+```sh
 docker volume ls
 
 ```
 output 
 
-```
-
+```sh
 Dockerfile git:(main) ✗ docker volume ls
 DRIVER    VOLUME NAME
 local     myvolsrc
@@ -67,27 +68,33 @@ local     myvolsrc
 
 #### run container 
 
+```sh
 docker  run --rm -d --name vol-demo sangam14/vol-dockerfile tail -f /dev/null
 76a5bfedc0a43bde7f2788fec5e5aafaa94854f16f960ed736ba598b80560f8d
 
 ```
+
+```sh
 docker ps
 CONTAINER ID   IMAGE                       COMMAND                  CREATED              STATUS              PORTS     NAMES
 76a5bfedc0a4   sangam14/vol-dockerfile     "tail -f /dev/null"      About a minute ago   Up About a minute             vol-demo
 ```
 #### stop running container 
-```
+
+```sh
 docker container stop vol-demo
 vol-demo
 
 ```
 
 #### lets run container 
-```
+
+```sh
 docker  run -d --name vol-demo --mount source=myvolsrc,target=/myvol  sangam14/vol-dockerfile  tail -f /dev/null
 ```
 #### exec into running container 
-```
+
+```sh
  Dockerfile git:(main) ✗ docker container exec vol-demo ls -l /myvol
 total 4
 -rw-r--r--    1 root     root            12 Mar  2 19:47 greeting
@@ -95,26 +102,30 @@ total 4
 ```
 #### check it out mount point using docker inspect 
 
-```
+```sh
 
 docker volume inspect myvolsrc -f "{{.Mountpoint}}"
 ```
 
 #### stop running container 
-```
+
+```sh
 docker container stop vol-demo
 ```
 #### remove container 
-```
+
+```sh
 docker container rm vol-demo
 
 ```
 #### remove volume 
-```
+
+```sh
 docker volume rm myvolsrc
 ```
 #### verify once 
-```
+
+```sh
 docker volume ls
 docker container ls
 ```

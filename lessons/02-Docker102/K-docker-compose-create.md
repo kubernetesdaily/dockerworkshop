@@ -6,7 +6,7 @@ description: " Creates containers for a service. "
 
 ### create docker-compose.yml with following content 
 
-```
+```yml
 version: "3.9"
 services:
   web:
@@ -20,7 +20,8 @@ services:
 
 
 ### Creates containers for a service.
-```
+
+```sh
 ➜  7-DC-CLI git:(main) ✗ docker compose create 
 [+] Running 7/7
  ⠿ redis Pulled                                                                                                                                                                      6.1s

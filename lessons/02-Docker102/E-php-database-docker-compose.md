@@ -5,7 +5,7 @@ description: " Database + PHP + Docker Compose  "
 
 we will see detach form logs upon start and user multiservices in one docker container 
 
-```
+```yml
 version: '3'
 
 services:
@@ -36,6 +36,7 @@ restarts automatically !
 upon start we set a password for the root user "my!!root!!pw" just fo demostrate 
 
 create dockerfile with following content 
+
 ```dockerfile
 
 FROM php:7.2-apache
@@ -45,7 +46,7 @@ RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
 
 crete index.php with following content 
 
-```
+```php
 <?php
 header("content-type: text");
 $host = "db"; //The hostname "db" from our docker-compose.yml file!!!
@@ -64,7 +65,7 @@ if ($conn->connect_errno > 0) {
 
 #### build docker compose 
 
-```
+```sh
  docker-compose up --build
 [+] Building 22.7s (7/7) FINISHED                                          
  => [internal] load build definition from dockerfile                  0.0s
@@ -143,7 +144,7 @@ cheers !
 
 lets adda a query to select the existing database on the mariaDB server extend your index.php 
 
-```
+```php
 <?php
 header("content-type: text");
 $host = "db"; //The hostname "db" from our docker-compose.yml file
@@ -169,7 +170,7 @@ if ($conn->connect_errno > 0) {
 rebuild your docker compose after updating your php file 
 
 
-```
+```sh
 4-DC-apache-database git:(main) ✗ docker-compose up --build
 [+] Building 4.0s (8/8) FINISHED                                                                                                                       
  => [internal] load build definition from dockerfile                                                                                              0.0s

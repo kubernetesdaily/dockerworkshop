@@ -6,7 +6,7 @@ description: " Receive real time events from containers. "
 
 #### here is sample voting app 
 
-```
+```sh
 cat docker-compose.yml 
 # version is now using "compose spec"
 # v2 and v3 are now combined!
@@ -113,7 +113,7 @@ networks:
 
 #### Docker Compose up 
 
-```
+```sh
 example-voting-app git:(main) docker compose up
 [+] Running 9/9
  ⠿ db Pulled                                                                                                                                                                         9.7s

@@ -6,26 +6,26 @@ description: " Docker Compose Build Command  "
 
 ### Docker Compose Build Command
 
-```
+```sh
 docker compose build [OPTIONS] [SERVICE...]
 
 ```
 
 If you change a service’s Dockerfile or the contents of its build directory, run docker compose build to rebuild it.
 
---build-arg		Set build-time variables for services.
---no-cache		Do not use cache when building the image
---progress	auto	Set type of progress output (auto, tty, plain, quiet)
---pull		Always attempt to pull a newer version of the image.
---push		Push service images.
---quiet , -q		Don’t print anything to STDOUT
---ssh		Set SSH authentications used when building service images. (use ‘default’ for using your default SSH Agent)
+`--build-arg`		Set build-time variables for services.<br>
+`--no-cache	`	Do not use cache when building the image
+`--progress	auto`	Set type of progress output (auto, tty, plain, quiet)  .<br>
+`--pull	`	Always attempt to pull a newer version of the image..<br>
+`--push	`	Push service images..<br>
+`--quiet , -q`		Don’t print anything to STDOUT.<br>
+`--ssh	`	Set SSH authentications used when building .service images. (use ‘default’ for using your default SSH Agent)
 
 
-create dockerfile with following content 
+#### create dockerfile with following content 
 
 
-```
+```dockerfile
 # syntax=docker/dockerfile:1
 FROM python:3.7-alpine
 WORKDIR /code
@@ -43,7 +43,7 @@ CMD ["flask", "run"]
 create app.py with following content 
 
 
-```
+```python
 import time
 
 import redis
@@ -71,10 +71,10 @@ def hello():
 
 ```
 
-create requirements.txt fil with following content 
+#### create requirements.txt  with following content 
 
 
-```
+```txt
 flask
 redis
 
@@ -82,7 +82,7 @@ redis
 
 create docker-compose.yml with following content 
 
-```
+```yml
 version: "3.9"
 services:
   web:
@@ -95,7 +95,7 @@ services:
 
 ### docker compose build 
 
-```
+```sh
 
  7-DC-CLI git:(main) ✗ docker compose build 
 [+] Building 27.1s (15/15) FINISHED                                                                                   

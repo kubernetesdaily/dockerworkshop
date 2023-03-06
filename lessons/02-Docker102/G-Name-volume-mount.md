@@ -5,7 +5,7 @@ description: " Named volume sharing data "
 
 ### create volume 
 
-```
+```sh
  6-DC-name-volume git:(main) ✗ docker volume create --name my-vol 
 my-vol
 ```
@@ -13,7 +13,7 @@ my-vol
 
 #### create docker-compose.yml with following content 
 
-```
+```yml
 version: '3.7'
 
 services:
@@ -34,7 +34,7 @@ volumes:
 
 #### run docker compose 
 
-```
+```sh
 
 docker compose up -d 
 WARN[0000] volume "my-vol" already exists but was not created by Docker Compose. Use `external: true` to use an existing volume 
@@ -44,13 +44,13 @@ WARN[0000] volume "my-vol" already exists but was not created by Docker Compose.
 
 ```
 #### start new container with ubuntu 
-```
+```sh
 docker run -v my-vol:/mydata --rm -it ubuntu /bin/bash
 ```
 
 show the database data files 
 
-```
+```sh
 root@1666e5d6f315:/# cd mydata/
 root@1666e5d6f315:/mydata# ls
 '#ib_16384_0.dblwr'   binlog.000001   client-cert.pem   mysql                public_key.pem    undo_001
@@ -65,17 +65,17 @@ exit
 
 ### share data between two containers? lets try ?
 
-```
+```sh
 6-DC-name-volume git:(main) ✗ docker volume create --name Datastore1
 Datastore1
 ```
 #### open a shell woth datastore1 in /mydatabase
-```
+```sh
 docker run -v Datastore1:/mydatastore --rm -it ubuntu /bin/bash
 ```
 #### write a new text file 
 
-```
+```sh
 echo "hello datastore1" > /mydatastore/hello.txt
 root@4b119677c00b:/# ls
 bin  boot  dev  etc  home  lib  media  mnt  mydatastore  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
@@ -87,7 +87,7 @@ root@4b119677c00b:/#
 
 #### add another line 
 
-```
+```sh
 root@4b119677c00b:/# echo "\n\nhello datastore 2" >> /mydatastore/hello.txt
 root@4b119677c00b:/# cat  mydatastore/hello.txt 
 hello datastore1

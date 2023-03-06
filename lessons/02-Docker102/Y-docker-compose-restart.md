@@ -4,7 +4,8 @@ description: " restart service images "
 ---
 
 #### restart service images 
-```
+
+```sh
 docker compose restart  
 [+] Running 5/5
  ⠿ Container example-voting-app-db-1      Started                                                                                                                                    0.7s

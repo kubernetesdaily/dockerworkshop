@@ -7,7 +7,7 @@ description: " Force stop service containers. "
 
 #### Forces running containers to stop by sending a SIGKILL signal. Optionally the signal can be passed :
 
-```
+```sh
  example-voting-app git:(main) docker-compose kill -s SIGINT
 [+] Running 4/0
  ⠿ Container example-voting-app-redis-1   Killed                                                                                                                                     0.0s

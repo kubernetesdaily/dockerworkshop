@@ -4,19 +4,20 @@ description: "image without any base"
 ---
 
 
-### write simple c program 
+#### write simple c program 
 
+```c
 #include<stdio.h>
 
 int main()
 {
 printf("dockerworkshop");
 }
-
-
-### Compile C program 
-
 ```
+
+#### Compile C program 
+
+```sh
 gcc -o hello hello.c 
 
 ✗ ./hello 
@@ -24,10 +25,10 @@ dockerworkshop%
 
 ```
 
-### create dockerfile with following content : 
+#### create dockerfile with following content : 
 
 
-```
+```dockerfile
 FROM scratch
 ADD hello /
 CMD ["/hello"]
@@ -35,7 +36,7 @@ CMD ["/hello"]
 
 ### Build Dockerfile without any base image 
 
-```
+```sh
 Dockerfile git:(main) ✗ docker build -t sangam14/hello-scratch -f dockerfile.hello .
 [+] Building 0.1s (5/5) FINISHED                                                                                                                                                                  
  => [internal] load build definition from dockerfile.hello                                                                                                                                   0.0s
@@ -52,9 +53,9 @@ Dockerfile git:(main) ✗ docker build -t sangam14/hello-scratch -f dockerfile.h
 
  ```
 
-### run docker image 
+#### run docker image 
 
-```
+```sh
  docker run sangam14/hello-scratch 
  dockerworkshop
 

@@ -3,7 +3,7 @@ title: " Docker Compose CLI - Pause/unpause Command "
 description: " Pause services "
 ---
 
-```
+```sh
  example-voting-app git:(main) docker compose pause
 [+] Running 4/0
  ⠿ Container example-voting-app-db-1      Paused                                                                                                                                     0.0s
@@ -16,7 +16,7 @@ description: " Pause services "
 
 #### Pauses running containers of a service. They can be unpaused with docker compose unpause.
 
-```
+```sh
 docker compose unpause
 [+] Running 4/0
  ⠿ Container example-voting-app-worker-1  Unpaused                                                                                                                                   0.0s

@@ -7,7 +7,7 @@ description: " Stop and remove containers, networks "
 
 ### create docker-compose.yml with following content 
 
-```
+```yml
 version: "3.9"
 services:
   web:
@@ -22,7 +22,7 @@ services:
 
 ### Create docker compose up 
 
-```
+```sh
 
  docker compose up 
 WARN[0000] Found orphan containers ([7-dc-cli-client-1]) for this project. If you removed or renamed this service in your compose file, you can run this command with the --remove-orphans flag to clean it up. 
@@ -47,7 +47,7 @@ Attaching to 7-dc-cli-redis-1, 7-dc-cli-web-1
 
 ### Create docker compose Down  
 
-```
+```sh
  7-DC-CLI git:(main) ✗ docker compose down 
 [+] Running 3/3
  ⠿ Container 7-dc-cli-redis-1  Removed                                                                                                                                               0.2s

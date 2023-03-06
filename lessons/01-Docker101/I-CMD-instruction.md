@@ -11,6 +11,7 @@ CMD executable parameter1 parameter2
 ```
 
 However, it is better practice to use the JSON array format:
+
 ```json
 CMD ["executable", "parameter1", "parameter2"]
 ```
@@ -25,7 +26,7 @@ CMD ["echo" , "Join CloudNativeFolks Community"]
 ```
 #### build dockerfile 
 
-```
+```sh
  docker build -t sangam14/cmd-dockerfile  -f dockerfile.cmd . 
 [+] Building 8.3s (7/7) FINISHED                                                                                                                                                                  
  => [internal] load build definition from dockerfile.cmd                                                                                                                                     0.0s
@@ -43,9 +44,9 @@ CMD ["echo" , "Join CloudNativeFolks Community"]
 
 ```
 
-### run docker container 
+#### run docker container 
 
-```
+```sh
 Dockerfile git:(main) ✗ docker run sangam14/cmd-dockerfile 
 Join CloudNativeFolks Community
 

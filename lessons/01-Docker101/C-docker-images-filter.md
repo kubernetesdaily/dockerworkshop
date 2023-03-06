@@ -7,7 +7,7 @@ running `docker run alpine ` command would download the Alpine Linux image from 
 
 Alpine Linux is a lightweight Linux distribution that is commonly used in Docker containers due to its small size and security features.
 
-```
+```sh
 dockerworkshop git:(main) ✗ docker pull alpine:3.6 
 docker pull alpine:3.7
 docker pull alpine:3.8
@@ -35,12 +35,12 @@ docker.io/library/alpine:3.9
 
 ```
 
-### docker images filtering 
+#### docker images filtering 
 
 The docker images command allows you to filter Docker images based on various criteria using the --filter option. Here are some common filters that you can use with the docker images command:
 
 
-```
+```sh
 docker images --filter=reference='alpine'
 REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
 alpine       3.9       9afdd4a290bf   2 years ago   5.3MB
@@ -48,12 +48,14 @@ alpine       3.8       b22edbe95d11   3 years ago   4.2MB
 alpine       3.7       bd812700d284   3 years ago   4.01MB
 alpine       3.6       25e814211fdd   3 years ago   3.84MB
 ```
-Filters images that are or are not "dangling," meaning they are not tagged and not referenced by any container.
-```
+#### Filters images that are or are not "dangling," meaning they are not tagged and not referenced by any container.
+
+```sh
 docker images --filter dangling=false 
 ```
 Or to list images created before a specific image, you can run:
-```
+
+```sh
 docker images --filter before=alpine:3.8 
 
 ```

@@ -3,7 +3,7 @@ title: " Docker Compose CLI - Images Command "
 description: " List images used by the created containers "
 ---
 
-```
+```sh
 example-voting-app git:(main) docker compose images 
 CONTAINER                     REPOSITORY                  TAG                 IMAGE ID            SIZE
 example-voting-app-db-1       postgres                    15-alpine           68d4a8d9d3d9        241MB
